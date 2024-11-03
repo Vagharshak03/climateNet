@@ -10,3 +10,7 @@ def first_page():
 def second_page():
     button = "<a href='/' target='_blank'><button type='button'>Previous page</button>"
     return button
+
+if __name__ == '__main__':
+    app.run(port='5000', debug=True)
+
