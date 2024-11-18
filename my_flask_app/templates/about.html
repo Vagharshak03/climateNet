@@ -5,114 +5,263 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/mystyles.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
-    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <script src="../static/js/myScript.js"></script>
 </head>
 
-<body oncontextmenu="return false;">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
 
-    <nav id="navbar" class="navbar navbar-expand-lg  scrolling-navbar  fixed-top">
-        <!--navbar-light bg-light   style="background-color: rgba(255, 255, 255, 0.5);"-->
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        font-family: 'Poppins', sans-serif;
+    }
+    .about-wrapper{
+        height: 100vh;
+    }
+    .about-left{
+        background-color: #008080;
+        background-image: linear-gradient(19deg, #21D4FD 0%, #008080 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        color:#fff
+    }
+    .about-left-content > div{
+        background: darkslategray;
+        padding: 4rem 4rem 2.5rem 5rem;
+        text-align: center;
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        border-radius: 12px 12px 0 0;
+    }
+    .about-left-content{
+        box-shadow: 0px 0px 18px -1px rgba(0, 0, 0, 0.39);
+        -webkit-box-shadow: 0px 0px 18px -1px rgba(0, 0, 0, 0.39);
+        -moz-box-shadow: 0px 0px 18px -1px rgba(0, 0, 0, 0.39);
+        border-radius: 12px;
+        width:80%;
+    }
+    .about-img img{
+        display: block;
+        width: 200px;
+    }
+    .about-img{
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 50%;
+        transition: all 0.5s ease-in-out;
+    }
+    .shadow{
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+    }
+
+
+
+    .about-left-content h2{
+        font-size: 2rem;
+        margin: 2.2rem 0 0.6rem 0;
+        line-height: 1.2;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #008080;
+    }
+    .about-left-content h3{
+        text-transform: uppercase;
+        font-weight: 300;
+        letter-spacing: 5px;
+        margin-top: 1.2rem;
+    }
+    .icons{
+        background: darkslategray;
+        display: flex;
+        justify-content: center;
+        padding: 0.8rem 0;
+        border-radius: 0 0 12px 12px;
+    }
+    .icons li{
+        list-style-type: none;
+        background: darkslategray;
+        color: #fff;
+        width: 40px;
+        height: 40px;
+        margin: 0 0.5rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+    }
+    .icons li:hover{
+        background: #edffec;
+        color: #000;
+    }
+    .about-right{
+        background: darkslategray;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 5rem;
+        text-align: center;
+        color:#fff
+    }
+    .about-right h1{
+        font-size: 5rem;
+        text-transform: uppercase;
+    }
+    .about-right h1 span{
+        color: #008080; /* ! */
+    }
+    .about-right h2{
+        font-weight: 600;
+    }
+    .about-btns{
+        display: flex;
+        margin: 2rem 0;
+    }
+    .btn{
+        border: none;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        border: 2px solid #fff;
+        border-radius: 20px;
+        padding: 0.55rem 0;
+        width: 130px;
+        font-weight: 600;
+        background: transparent;
+        margin: 0 0.5rem;
+        cursor: pointer;
+        color:#fff
+    }
+    .btn.btn-pink{
+        background: #008080;
+        color: #fff;
+        border-color: #c8cae6;
+        transition: all 0.5s ease-in-out;
+    }
+    .btn.btn-pink:hover{
+        background: transparent;
+        border-color: #fff;
+        color: #fff;
+    }
+    .btn.btn-white{
+        transition: all 0.5s ease-in-out;
+    }
+    .btn.btn-white:hover{
+        background: #008080;
+        border-color: #008080;
+        color: #fff;
+    }
+    .about-para p{
+        font-weight: 300;
+        padding: 0.5rem;
+        opacity: 0.8;
+    }
+
+    @media screen and (min-width: 992px){
+        .about-wrapper{
+            display: grid;
+            grid-template-columns: repeat(2, 2fr);
+        }
+
+        .about-left{
+            position: relative;
+        }
+        .about-left-content{
+            position: absolute;
+            width:80%
+
+        }
+    }
+    .credit{
+        text-align: center;
+        color: #fff;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .credit a{
+        text-decoration: none;
+        color:#B721FF;
+        font-weight: bold;
+    }
+</style>
+
+<body> <!-- oncontextmenu="return false;"-->
+
+<nav id="navbar" class="navbar navbar-expand-lg  scrolling-navbar  fixed-top navbar-light  ">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item px-2 active"><a class="nav-link text-light " href="/"> Home</a>
-                </li>
-                <li class="nav-item px-2"><a class="nav-link text-light font-weight-bold" href="/about">About</a>
-                </li>
-                <li class="nav-item px-2"><a class="nav-link text-light" href="/contact">Contact</a></li>
-                <li class="nav-item px-2"><a class="nav-link text-light" href="/services">Services</a></li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item px-2"><a class="nav-link text-light" href="/">
+                Home</a>
+            </li>
+            <li class="nav-item px-2 active"><a class="nav-link text-light font-weight-bold" href="/about">About</a></li>
+            <li class="nav-item px-2"><a class="nav-link text-light" href="/contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
 
+<div class = "about-wrapper">
+    <div class = "about-left">
+        <div class = "about-left-content">
+            <div>
+                <div class = "shadow">
+                    <div class = "about-img">
+                        <img src = "{{ url_for('static', filename='/images/myphoto.jpg')}}" alt = "about image">
+                    </div>
+                </div>
+
+                <h2>Vagharshak Avetisyan</h2>
+                <h3>Web developer</h3>
+            </div>
+
+            <ul class = "icons">
+                <li><a class="text-white" href="https://www.facebook.com/Vagharshakavetisyans/"><i class = "fab fa-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/avetisyann.03?igsh=MXUweHBlZWx1ZmZuYg%3D%3D&utm_source=qr"><i class = "fab fa-instagram"></i></a></li>
+                <li><a class="text-white" href="https://www.linkedin.com/in/vagharshak-avetisyan-143682159/"><i class = "fab fa-linkedin"></i></a></li>
             </ul>
         </div>
-    </nav>
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="4500">
-        <!--  -->
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" aria-current="true" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active"
-                style="background-image: url('https://images.unsplash.com/photo-1595776613215-fe04b78de7d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')">
-                <div class="carousel-caption d-none d-md-block" style="background-color: #ffffff; opacity: 0.4;">
-                    <a href="/start" class="text-decoration-none text-dark font-weight-bold">
-                        <h3 class="display-4" data-toggle="tooltip" data-placement="top" title="Click here!">
-                            Programming
-                        </h3>
-                    </a>
-                    <p class="lead text-dark">Ten Commandments of GOD</p>
-                </div>
-            </div>
+    </div>
 
-            <div class="carousel-item"
-                style="background-image: url('https://images.unsplash.com/photo-1528819622765-d6bcf132f793?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')">
-                <div class="carousel-caption d-none d-md-block" style="background-color: #ffffff; opacity: 0.6;">
-                    <a href="/start" class="text-decoration-none text-dark">
-                        <h3 class="display-4" data-toggle="tooltip" data-placement="top" title="Click here!">
-                            Psychology
-                        </h3>
-                    </a>
-                    <p class="lead text-dark">Ten Commandments of GOD</p>
-                </div>
-            </div>
-
-            <div class="carousel-item"
-                style="background-image: url('https://images.pexels.com/photos/7333510/pexels-photo-7333510.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940.jpg')">
-                <div class="carousel-caption d-none d-md-block" style="background-color: #ffffff; opacity: 0.6;">
-                    <a href="start" class="text-decoration-none text-dark">
-                        <h3 class="display-4" data-toggle="tooltip" data-placement="top" title="Click here!">
-                            Handwriting
-                        </h3>
-                    </a>
-                    <p class="lead text-dark">Ten Commandments of GOD</p>
-                </div>
-            </div>
-
-            <div class="carousel-item" style="background-image: url('../static/images/sport.jpg')">
-                <div class="carousel-caption d-none d-md-block" style="background-color: #ffffff; opacity: 0.6;">
-                    <a href="start.html" class="text-decoration-none text-dark">
-                        <h3 class="display-4" data-toggle="tooltip" data-placement="top" title="Click here!">
-                            Physical education
-                        </h3>
-                    </a>
-                    <p class="lead text-dark">Ten Commandments of GOD</p>
-                </div>
-            </div>
+    <div class = "about-right">
+        <h1>Hello<span>!</span></h1>
+        <h2>Here's who I am & what I do</h2>
+        <div class = "about-btns">
+            <a href="{{ url_for('static', filename='/files/cv.pdf') }}" download><button type = "button" class = "btn btn-pink">resume / CV</button></a>
+            <a href="https://github.com/Vagharshak03"><button type = "button" class = "btn btn-white">Git hub</button></a>
         </div>
 
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+        <div class = "about-para">
+            <p>Full Stack Web Developer with a passion for crafting innovative digital
+                solutions. Leveraging solid experience in both front-end and back-end
+                development, I aim to contribute my expertise to a forward-thinking team.
+                Committed to delivering high-quality, user-centric applications while staying
+                abreast of emerging technologies. Eager to tackle new challenges and drive
+                impactful results in a collaborative environment.
+            </p>
+        </div>
+        <div class="credit">Vagharshak Avetisyan</div>
     </div>
+</div>
 
 </body>
 </html>

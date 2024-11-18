@@ -38,18 +38,27 @@
 
     <nav id="navbar" class="navbar navbar-expand-lg  scrolling-navbar  fixed-top navbar-light bg-light ">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item px-2 active"><a class="nav-link text-dark font-weight-bold" href="index.html">
-                        Home</a>
+                <li class="nav-item px-2 active"><a class="nav-link text-dark font-weight-bold" href="/">
+                    Home</a>
                 </li>
                 <li class="nav-item px-2"><a class="nav-link text-dark " href="/about">About</a></li>
-                <li class="nav-item px-2"><a class="nav-link text-dark" href="contact">Contact</a></li>
-                <li class="nav-item px-2"><a class="nav-link text-dark" href="services">Services</a></li>
+                <li class="nav-item px-2"><a class="nav-link text-dark" href="/contact">Contact</a></li>
+                <li class="nav-item px-2"><div class="dropdown">
+                    <a class="nav-link text-dark" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Services
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <a href="#calculator"><button class="dropdown-item" type="button">Calculator</button></a>
+                        <a href="#clock"><button class="dropdown-item" type="button">Clock</button></a>
+                        <a href="#tumolabs"><button class="dropdown-item" type="button">TUMO Labs</button></a>
+                    </div>
+                </div></li>
             </ul>
         </div>
     </nav>
@@ -147,173 +156,97 @@
     </script>
 
     <div class="container mw-100 mh-100 bg-light home mt-5 header" id="myPage">
-        <br>
         <div class="container-fluid h-25 text-center">
             <img class="h-75 bg-light mx-auto d-block img-thumbnail" style="border:0; border-radius:100%" src="{{ url_for('static', filename='images/logo.jpg') }}" alt="AVA logo">
         </div>
         <h1>
             <a href="" class="typewrite mt-5 text-decoration-none  font-weight-lighter display-5 " data-period="2000"
-                data-type='[ "Hi, Welcome to AVA website. ", "My name is <b>Vagharshak</b>", "Please <u>scroll down</u>, to know more about me."]'>
+                data-type='[ "Hi, Welcome to AVA website. ", "My name is <b>Vagharshak</b>.", "Please <u>scroll down</u>, to know more about me."]'>
                 <span class="wrap"></span>
             </a>
         </h1>
     </div>
 
-    <div class="container bg-white h-100 mw-100">
-        <div class="row h-100 p-2">
+    <div class="container bg-white h-50 mw-100">
+        <br>
+        <h1 class="text-center mx-auto">My Career</h1>
+        <br>
+        <div class="row h-100 p-1">
             <div class="col-8 p-5 mh-100 gr-box-1 bg-light">
-                <h1>French University in Armenian</h1>
+                <h1>French University in Armenia</h1>
                 <br>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id est dolorum, natus ad harum, qui ab
-                    maiores veniam odio voluptas temporibus amet beatae adipisci repellendus eligendi asperiores
-                    similique eveniet eum!</p>
+                <p>The French University in Armenia offers a comprehensive education combining theoretical knowledge in programming,
+                    systems, networks, databases, and machine architecture with practical training that forms a third of the curriculum.
+                    It emphasizes foundational principles for current and future technologies while integrating professional orientation to
+                    prepare students for successful careers.</p>
+<!--                <a href="/ufar" class="w-100 btn border mylink font-weight-bold align-text-bottom" target="_blank">Me in UFAR</a>-->
             </div>
             <div class="col-4 h-100 p-3">
                 <img class="w-100 pb-3 heading_image" src="{{ url_for('static', filename='images/ufar.jpg') }}" alt="">
                 <br>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate sit quidem ex fuga amet maxime
-                    nobis tempora, velit autem debitis sint unde alias neque fugit itaque adipisci quae vero
-                    consequuntur?</p>
+                <a href="https://ufar.am/" target="_blank"><button class="btn btn-primary w-100">UFAR.AM</button></a>
             </div>
         </div>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 id="calculator" class="text-center">Calculator</h1>
+    {% include 'calculator.html' %}
 
 
-    <div class="container bg-white h-100 mw-100">
-        <div class="row h-100 p-2">
+    <div class="container bg-white h-50 mw-100">
+        <div class="row h-100 p-1">
             <div class="col-4 h-100 p-3 ">
                 <img class="w-100 pb-3 heading_image"
                     src="{{ url_for('static', filename='images/pmt.png') }}"
                     alt="">
                 <br>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate sit quidem ex fuga amet maxime
-                    nobis tempora, velit autem debitis sint unde alias neque fugit itaque adipisci quae vero
-                    consequuntur?</p>
+                <a href="http://performancemedia.am/" target="_blank" ><button class="btn btn-primary w-100">PERFORMANCEMEDIA.AM</button></a>
             </div>
             <div class="col-8 mh-100 p-5 gr-box-2 bg-light text-right">
                 <h1>Performance Media Technologies</h1>
                 <br>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id est dolorum, natus ad harum, qui ab
-                    maiores veniam odio voluptas temporibus amet beatae adipisci repellendus eligendi asperiores
-                    similique eveniet eum!</p>
+                <p>Performance Media Technology (PMT) specializes in delivering tailored advertising and marketing solutions to its clients.
+                    With expertise in social media management (SMM) and programming,
+                    PMT offers comprehensive services, including creating and managing web servers, ensuring seamless online presence,
+                    and driving impactful digital campaigns for business growth.</p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+<!--                <a href="/pmt" class="w-100 btn border mylink font-weight-bold" target="_blank">Me in PMT</a>-->
             </div>
         </div>
     </div>
+    <h1 id="clock" class="text-center">Clock</h1>
+    {% include 'clock.html' %}
 
-    <div class="container bg-white h-100 mw-100">
-        <div class="row h-100 p-2">
+    <div class="container bg-white h-50 mw-100">
+        <div class="row h-100 p-1">
             <div class="col-8 p-5 mh-100 gr-box-1 bg-light">
                 <h1>TUMO Labs</h1>
                 <br>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id est dolorum, natus ad harum, qui ab
-                    maiores veniam odio voluptas temporibus amet beatae adipisci repellendus eligendi asperiores
-                    similique eveniet eum!</p>
+                <p>TUMO Labs represents the educational direction of the EU TUMO Convergence Center.
+                    This tuition-free applied science and engineering hub connects higher-education with industry.
+                    Anyone over the age of 18 can participate in the program designed specifically for TUMO Labs.
+                    The TUMO Labs education program is based on the just-in-time methodology so that our projects and guided self-learning
+                    content corresponds to the constantly evolving tech and science industries.</p>
+<!--                <a href="/tumolabs" class="w-100 btn border mylink font-weight-bold" target="_blank">Me in TUMO LABS</a>-->
+
             </div>
             <div class="col-4 h-100 p-3">
                 <img class="w-100 pb-3 heading_image"
                      src="{{ url_for('static', filename='images/tumolabs.png') }}"
                     alt="">
                 <br>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate sit quidem ex fuga amet maxime
-                    nobis tempora, velit autem debitis sint unde alias neque fugit itaque adipisci quae vero
-                    consequuntur?</p>
+                <a href="http://tumolabs.am/" target="_blank" ><button class="btn btn-primary w-100">TUMOLABS.AM</button></a>
+
+
             </div>
         </div>
     </div>
-
-    <canvas class="mx-auto d-block rounded-circle" id="canvas" width="200" height="200">
-    </canvas>
-    <script>
-        var canvas = document.getElementById("canvas");
-        var ctx = canvas.getContext("2d");
-        var radius = canvas.height / 2;
-        ctx.translate(radius, radius);
-        radius = radius * 0.90
-        setInterval(drawClock, 1000);
-
-        function drawClock() {
-            drawFace(ctx, radius);
-            drawNumbers(ctx, radius);
-            drawTime(ctx, radius);
-        }
-
-        function drawFace(ctx, radius) {
-            var grad;
-            ctx.beginPath();
-            ctx.arc(0, 0, radius, 0, 2 * Math.PI);
-            ctx.fillStyle = 'white';
-            ctx.fill();
-            grad = ctx.createRadialGradient(0, 0, radius * 0.95, 0, 0, radius * 1.05);
-            grad.addColorStop(0, '#333');
-            grad.addColorStop(0.5, 'white');
-            grad.addColorStop(1, '#333');
-            ctx.strokeStyle = grad;
-            ctx.lineWidth = radius * 0.1;
-            ctx.stroke();
-            ctx.beginPath();
-            ctx.arc(0, 0, radius * 0.1, 0, 2 * Math.PI);
-            ctx.fillStyle = '#333';
-            ctx.fill();
-        }
-
-        function drawNumbers(ctx, radius) {
-            var ang;
-            var num;
-            ctx.font = radius * 0.15 + "px arial";
-            ctx.textBaseline = "middle";
-            ctx.textAlign = "center";
-            for (num = 1; num < 13; num++) {
-                ang = num * Math.PI / 6;
-                ctx.rotate(ang);
-                ctx.translate(0, -radius * 0.85);
-                ctx.rotate(-ang);
-                ctx.fillText(num.toString(), 0, 0);
-                ctx.rotate(ang);
-                ctx.translate(0, radius * 0.85);
-                ctx.rotate(-ang);
-            }
-        }
-
-        function drawTime(ctx, radius) {
-            var now = new Date();
-            var hour = now.getHours();
-            var minute = now.getMinutes();
-            var second = now.getSeconds();
-            //hour
-            hour = hour % 12;
-            hour = (hour * Math.PI / 6) +
-                (minute * Math.PI / (6 * 60)) +
-                (second * Math.PI / (360 * 60));
-            drawHand(ctx, hour, radius * 0.5, radius * 0.07);
-            //minute
-            minute = (minute * Math.PI / 30) + (second * Math.PI / (30 * 60));
-            drawHand(ctx, minute, radius * 0.8, radius * 0.07);
-            // second
-            second = (second * Math.PI / 30);
-            drawHand(ctx, second, radius * 0.9, radius * 0.02);
-        }
-
-        function drawHand(ctx, pos, length, width) {
-            ctx.beginPath();
-            ctx.lineWidth = width;
-            ctx.lineCap = "round";
-            ctx.moveTo(0, 0);
-            ctx.rotate(pos);
-            ctx.lineTo(0, -length);
-            ctx.stroke();
-            ctx.rotate(-pos);
-        }
-
-    </script>
-    <div id="root" class="text-center text-dark"></div>
-
-    <script type="text/babel">
-        function tick() {
-            const element = (<h1>{new Date().toLocaleTimeString()}</h1>);
-            ReactDOM.render(element, document.getElementById('root'));
-        }
-
-        setInterval(tick, 1000);
-    </script>
-</body>
+{% include 'footer.html' %}
 </html>
