@@ -6,35 +6,31 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Clean Blog - Start Bootstrap Theme</title>
-        <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" Hrel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
         <link href="../static/css/styles.css" rel="stylesheet" />
     </head>
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="index.html"><img style="width: 20%; display: inline-block" src="assets/img/ufaricon.png" alt=""></a>
+                <a class="navbar-brand" href="/"><img style="width: 20%; display: inline-block" src="{{ url_for('static', filename='img/ufaricon.png') }}"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/index">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/about">About</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/ima">IMA</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
         <!-- Page Header-->
-        <header class="masthead" style="background-image: url('assets/img/forth.jpg')">
+        <header class="masthead" style="background-image: url('../static/img/forth.jpg')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
@@ -47,66 +43,63 @@
             </div>
         </header>
 
-        <div class="row">
-            <div class="col p-0"><img class="w-100" src="assets/img/ufar.jpeg"></div>
-            <div class="col p-0"><img class="w-100 h-100" src="assets/img/thirdufar.png"></div>
-            <!-- <div class="col p-0"><img class="w-100" src="assets/img/ufar.jpeg"></div> -->
-            <!-- <div class="col p-0"><img class="w-100 h-100" src="assets/img/thirdufar.png"></div> -->
-          </div>
-        
         <!-- Main Content-->
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <a href="post.html">
-                            <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
-                            <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3>
-                        </a>
+                        <h2 class="post-title">
+                            Dean of IMA
+                        </h2>
+                        <h3 class="post-subtitle">
+                            Computer science is a very broad field, the foundations of which lie at the intersection of several fundamental and applied professional fields. The main mission of our faculty is to guide and accompany students with unlimited flight of thought and imagination, to help them become internationally competitive in today's most demanding professional field and to build their own professional path in their homeland, Armenia.
+                        </h3>
                         <p class="post-meta">
                             Posted by
-                            <a href="#!">Start Bootstrap</a>
-                            on September 24, 2023
+                            <a href="#!">Kristina Sargsyan</a>
+                            on <a href="https://ufar.am/programs/bachelors/it">ufar.com</a>
                         </p>
                     </div>
                     <!-- Divider-->
                     <hr class="my-4" />
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <a href="post.html"><h2 class="post-title">I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.</h2></a>
+                        <h2 class="post-title">
+                            I am glad that you are interested in the Faculty of Informatics of the UFAR. The Faculty of Informatics of UFAR devotes a lot of attention to project management, educates future engineers and specialists in the field of informatics. By choosing UFAR, you will also be admitted to Toulouse 3 Paul Sabatier University and receive an education that combines the best Armenian and French experience in the field of informatics.
+                        </h2>
                         <p class="post-meta">
                             Posted by
-                            <a href="#!">Start Bootstrap</a>
-                            on September 18, 2023
+                            <a href="#!">Alain Crouzil</a>
+                            on <a href="https://ufar.am/programs/bachelors/it">ufar.com</a>
                         </p>
                     </div>
                     <!-- Divider-->
                     <hr class="my-4" />
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <a href="post.html">
-                            <h2 class="post-title">Science has not yet mastered prophecy</h2>
-                            <h3 class="post-subtitle">We predict too much for the next year and yet far too little for the next ten.</h3>
+                        <a href="ima.html">
+                            <h2 class="post-title">Artificial Intelligence has many benefits and purposes that aim to help, support people, facilitate our work and our activities. The main mission of our faculty is to accompany and guide students with unlimited mind and imagination, to become competitive in today's most popular professional field at transnational level, to build their own professional trajectory in Armenia.</h2>
+                            <h3 class="post-subtitle">Dean of IMA</h3>
                         </a>
                         <p class="post-meta">
                             Posted by
-                            <a href="#!">Start Bootstrap</a>
-                            on August 24, 2023
+                            <a href="#!">Kristina Sargsyan</a>
+                            on <a href="https://ufar.am/programs/masters/it">ufar.com</a>
                         </p>
                     </div>
                     <!-- Divider-->
                     <hr class="my-4" />
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <a href="post.html">
-                            <h2 class="post-title">Failure is not an option</h2>
-                            <h3 class="post-subtitle">Many say exploration is part of our destiny, but it’s actually our duty to future generations.</h3>
+                        <a href="ima.html">
+                            <h2 class="post-title">Artificial Intelligence is revolutionizing many areas of computing through machine learning, knowledge representation and reasoning. Understanding the fundamentals of Artificial Intelligence is essential to be able to participate in the current developments of its many fields of application but also to be the actors of its future evolution.</h2>
+                            <h3 class="post-subtitle"></h3>
                         </a>
                         <p class="post-meta">
                             Posted by
-                            <a href="#!">Start Bootstrap</a>
-                            on July 8, 2023
+                            <a href="#!">Alain Crouzil</a>
+                            on <a href="https://ufar.am/programs/masters/it">ufar.com</a>
                         </p>
                     </div>
                     <!-- Divider-->

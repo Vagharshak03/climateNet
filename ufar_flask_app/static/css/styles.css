@@ -10738,9 +10738,13 @@ header.masthead .post-heading .meta a {
   color: #fff;
 }
 @media (min-width: 992px) {
+  header#about-masthead{
+    padding-top: 12.5rem;
+    padding-bottom: 23.5rem;
+  }
   header.masthead {
     padding-top: 12.5rem;
-    padding-bottom: 12.5rem;
+    padding-bottom: 4.5rem;
   }
   header.masthead .page-heading h1, header.masthead .page-heading .h1,
   header.masthead .site-heading h1,
@@ -10778,7 +10782,7 @@ header.masthead .post-heading .meta a {
   color: #0085A1;
 }
 .post-preview > a > .post-title {
-  font-size: 1.875rem;
+  font-size: 0.875rem;
   margin-top: 1.875rem;
   margin-bottom: 0.625rem;
 }
