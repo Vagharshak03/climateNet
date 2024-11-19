@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html xmlns="indexen.html" lang="en" xml:lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/mystyles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <script src="../static/js/myScript.js"></script>
+    <title>AVA website</title>
+</head>
+
+<style>
+    .header {
+        text-align: center;
+        color: #fff;
+        text-decoration: none;
+
+    }
+
+    * {
+        color: black;
+    }
+</style>
+
+<body>
+
+    <nav id="navbar" class="navbar navbar-expand-lg  scrolling-navbar  fixed-top navbar-light bg-light ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item px-2 active"><a class="nav-link text-dark font-weight-bold" href="/">
+                    Home</a>
+                </li>
+                <li class="nav-item px-2"><a class="nav-link text-dark " href="/about">About</a></li>
+                <li class="nav-item px-2"><a class="nav-link text-dark" href="/contact">Contact</a></li>
+                <li class="nav-item px-2"><div class="dropdown">
+                    <a class="nav-link text-dark" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Services
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <a href="#calculator"><button class="dropdown-item" type="button">Calculator</button></a>
+                        <a href="#clock"><button class="dropdown-item" type="button">Clock</button></a>
+                        <a href="#tumolabs"><button class="dropdown-item" type="button">TUMO Labs</button></a>
+                    </div>
+                </div></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+
+        var TxtType = function (el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 5500;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
+
+        TxtType.prototype.tick = function () {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+            var that = this;
+            var delta = 200 - Math.random() * 100;
+
+            if (this.isDeleting) { delta /= 2; }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 500;
+            }
+
+            setTimeout(function () {
+                that.tick();
+            }, delta);
+        };
+
+        window.onload = function () {
+            var elements = document.getElementsByClassName('typewrite');
+            for (var i = 0; i < elements.length; i++) {
+                var toRotate = elements[i].getAttribute('data-type');
+                var period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                    new TxtType(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+            // INJECT CSS
+            var css = document.createElement("style");
+            css.type = "text/css";
+            css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+            document.body.appendChild(css);
+        };
+
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+
+        $(document).ready(function () {
+
+            $('.counter').each(function () {
+                $(this).prop('Counter', 0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 4000,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+
+        });
+
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-70px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+
+    <div class="container mw-100 mh-100 bg-light home mt-5 header" id="myPage">
+        <div class="container-fluid h-25 text-center">
+            <img class="h-75 bg-light mx-auto d-block img-thumbnail" style="border:0; border-radius:100%" src="{{ url_for('static', filename='images/logo.jpg') }}" alt="AVA logo">
+        </div>
+        <h1>
+            <a href="" class="typewrite mt-5 text-decoration-none  font-weight-lighter display-5 " data-period="2000"
+                data-type='[ "Hi, Welcome to AVA website. ", "My name is <b>Vagharshak</b>.", "Please <u>scroll down</u>, to know more about me."]'>
+                <span class="wrap"></span>
+            </a>
+        </h1>
+    </div>
+
+    <div class="container bg-white h-50 mw-100">
+        <br>
+        <h1 class="text-center mx-auto">My Career</h1>
+        <br>
+        <div class="row h-100 p-1">
+            <div class="col-8 p-5 mh-100 gr-box-1 bg-light">
+                <h1>French University in Armenia</h1>
+                <br>
+                <p>The French University in Armenia offers a comprehensive education combining theoretical knowledge in programming,
+                    systems, networks, databases, and machine architecture with practical training that forms a third of the curriculum.
+                    It emphasizes foundational principles for current and future technologies while integrating professional orientation to
+                    prepare students for successful careers.</p>
+<!--                <a href="/ufar" class="w-100 btn border mylink font-weight-bold align-text-bottom" target="_blank">Me in UFAR</a>-->
+            </div>
+            <div class="col-4 h-100 p-3">
+                <img class="w-100 pb-3 heading_image" src="{{ url_for('static', filename='images/ufar.jpg') }}" alt="">
+                <br>
+                <a href="https://ufar.am/" target="_blank"><button class="btn btn-primary w-100">UFAR.AM</button></a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 id="calculator" class="text-center">Calculator</h1>
+    {% include 'calculator.html' %}
+
+
+    <div class="container bg-white h-50 mw-100">
+        <div class="row h-100 p-1">
+            <div class="col-4 h-100 p-3 ">
+                <img class="w-100 pb-3 heading_image"
+                    src="{{ url_for('static', filename='images/pmt.png') }}"
+                    alt="">
+                <br>
+                <a href="http://performancemedia.am/" target="_blank" ><button class="btn btn-primary w-100">PERFORMANCEMEDIA.AM</button></a>
+            </div>
+            <div class="col-8 mh-100 p-5 gr-box-2 bg-light text-right">
+                <h1>Performance Media Technologies</h1>
+                <br>
+                <p>Performance Media Technology (PMT) specializes in delivering tailored advertising and marketing solutions to its clients.
+                    With expertise in social media management (SMM) and programming,
+                    PMT offers comprehensive services, including creating and managing web servers, ensuring seamless online presence,
+                    and driving impactful digital campaigns for business growth.</p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+<!--                <a href="/pmt" class="w-100 btn border mylink font-weight-bold" target="_blank">Me in PMT</a>-->
+            </div>
+        </div>
+    </div>
+    <h1 id="clock" class="text-center">Clock</h1>
+    {% include 'clock.html' %}
+
+    <div class="container bg-white h-50 mw-100">
+        <div class="row h-100 p-1">
+            <div class="col-8 p-5 mh-100 gr-box-1 bg-light">
+                <h1>TUMO Labs</h1>
+                <br>
+                <p>TUMO Labs represents the educational direction of the EU TUMO Convergence Center.
+                    This tuition-free applied science and engineering hub connects higher-education with industry.
+                    Anyone over the age of 18 can participate in the program designed specifically for TUMO Labs.
+                    The TUMO Labs education program is based on the just-in-time methodology so that our projects and guided self-learning
+                    content corresponds to the constantly evolving tech and science industries.</p>
+<!--                <a href="/tumolabs" class="w-100 btn border mylink font-weight-bold" target="_blank">Me in TUMO LABS</a>-->
+
+            </div>
+            <div class="col-4 h-100 p-3">
+                <img class="w-100 pb-3 heading_image"
+                     src="{{ url_for('static', filename='images/tumolabs.png') }}"
+                    alt="">
+                <br>
+                <a href="http://tumolabs.am/" target="_blank" ><button class="btn btn-primary w-100">TUMOLABS.AM</button></a>
+
+
+            </div>
+        </div>
+    </div>
+{% include 'footer.html' %}
+</html>

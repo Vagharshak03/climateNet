@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a97d6807-0270-449a-8be0-1bd564067050" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ufar_flask_app/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/ufar_flask_app/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ufar_flask_app/static/img/about-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ufar_flask_app/static/img/contact-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ufar_flask_app/static/img/home-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ufar_flask_app/static/img/post-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ufar_flask_app/static/img/post-sample-image.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ufar_flask_app/static/img/secondufar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ufar_flask_app/static/img/thirdufar.png" beforeDir="false" afterPath="$PROJECT_DIR$/ufar_flask_app/static/img/icons.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ufar_flask_app/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/ufar_flask_app/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ufar_flask_app/templates/contact.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ufar_flask_app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ufar_flask_app/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ufar_flask_app/templates/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/ufar_flask_app/templates/ima.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2onn2uEQfzC4pEuBKUxfZ1SiRwB" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl$/Ubuntu/var/www/climateNet/my_flask_app/static/images&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu\var\www\climateNet\my_flask_app\static\images" />
+      <recent name="\\wsl$\Ubuntu\var\www\climateNet\ufar_flask_app" />
+      <recent name="\\wsl$\Ubuntu\var\www\climateNet\ufar_flask_app\static" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu\var\www\climateNet\my_flask_app\templates" />
+      <recent name="\\wsl$\Ubuntu\var\www\climateNet\ufar_flask_app\templates" />
+      <recent name="\\wsl$\Ubuntu\var\www\climateNet\flask_app\static" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a97d6807-0270-449a-8be0-1bd564067050" name="Changes" comment="" />
+      <created>1731514003937</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731514003937</updated>
+      <workItem from="1731514006221" duration="2198000" />
+      <workItem from="1731516245798" duration="7752000" />
+      <workItem from="1731681438972" duration="4160000" />
+      <workItem from="1731921887917" duration="22088000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

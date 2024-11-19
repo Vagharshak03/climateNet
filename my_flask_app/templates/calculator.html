@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="../static/css/calculator.css">
+</head>
+<script>
+    function insert(num){
+        document.form.textview.value = document.form.textview.value + num;
+    }
+
+    function equal(){
+        var exp = document.form.textview.value;
+        if(exp){
+            document.form.textview.value = eval(exp)
+        }
+    }
+
+    function clean(){
+        document.form.textview.value = "";
+    }
+
+    function back(){
+        var exp = document.form.textview.value;
+        document.form.textview.value = exp.substring(0, exp.length-1);
+    }
+</script>
+<body>
+<div class="calculator">
+    <div class="unswer">
+        <form name="form">
+            <input type="input" class="textview" name="textview" placeholder="&#48;" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="10">
+        </form>
+    </div>
+    <div class="first_symbols">
+        <div class="one" type="button" value="AC" onclick="clean()"><p class="symbols1">AC</p></div>
+
+        <!-- chi ashxatum -->
+        <div class="one" type="button" value="" onclick="insert()"><p class="symbols1">+/&#95;</p></div>
+
+        <!-- chi ashxatum -->
+        <div class="one" type="button" value="" onclick="insert()"><p class="symbols1">%</p></div>
+
+
+        <div class="two" type="button" value="/" onclick="insert('/')"><p class="symbols2">&#247;</p></div>
+    </div>
+    <div class="line">
+        <div class="number" type="button" value="7" onclick="insert(7)"><p class="symbols2">7</p></div>
+        <div class="number" type="button" value="8" onclick="insert(8)"><p class="symbols2">8</p></div>
+        <div class="number" type="button" value="9" onclick="insert(9)"><p class="symbols2">9</p></div>
+        <div class="two" type="button" value="*" onclick="insert('*')"><p class="symbols2">&#215;</p></div>
+
+    </div>
+    <div class="line">
+        <div class="number"  type="button" value="4" onclick="insert(4)"><p class="symbols2">4</p></div>
+        <div class="number"  type="button" value="5" onclick="insert(5)"><p class="symbols2">5</p></div>
+        <div class="number"  type="button" value="6" onclick="insert(6)"><p class="symbols2">6</p></div>
+        <div class="two" type="button" value="-" onclick="insert('-')"><p class="symbols2">&#8722;</p></div>
+
+    </div>
+    <div class="line">
+        <div class="number" type="button" value="1" onclick="insert(1)"><p class="symbols2">1</p></div>
+        <div class="number" type="button" value="2" onclick="insert(2)"><p class="symbols2">2</p></div>
+        <div class="number" type="button" value="3" onclick="insert(3)"><p class="symbols2">3</p></div>
+        <div class="two" type="button" value="+" onclick="insert('+')"><p class="symbols2">&#43;</p></div>
+    </div>
+    <div class="line">
+        <div class="zero" type="button" value="0" onclick="insert(0)"><p class="symbols3">0</p></div>
+        <div class="number ket" type="button" value="." onclick="insert('.')"><p class="symbols2">.</p></div>
+        <div class="two" type="button" value="=" onclick="equal()"><p class="symbols2">=</p></div>
+    </div>
+</div>
+
+
+</body>
+
+</html>
