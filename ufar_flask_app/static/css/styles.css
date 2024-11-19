@@ -10740,11 +10740,15 @@ header.masthead .post-heading .meta a {
 @media (min-width: 992px) {
   header#about-masthead{
     padding-top: 12.5rem;
-    padding-bottom: 23.5rem;
+    padding-bottom: 21.5rem;
+  }
+  header#ima-masthead{
+    padding-top: 12.5rem;
+    padding-bottom: 10.5rem;
   }
   header.masthead {
     padding-top: 12.5rem;
-    padding-bottom: 4.5rem;
+    padding-bottom: 15.5rem;
   }
   header.masthead .page-heading h1, header.masthead .page-heading .h1,
   header.masthead .site-heading h1,
@@ -10803,4 +10807,31 @@ header.masthead .post-heading .meta a {
   .post-preview > a > .post-title {
     font-size: 2.25rem;
   }
+}
+
+.animate-box {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all 1s ease-in-out; /* Increase the time here */
+}
+
+.animate-box.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Smooth transition for hover and scrolling animation */
+.p-4 {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for box */
+.p-4:hover {
+  transform: translateY(-5px); /* Adds a small lift effect on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Slight shadow on hover */
+}
+
+h5 {
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 1px;
 }
